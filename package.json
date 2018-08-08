@@ -1,0 +1,74 @@
+{
+  "name": "survey-ui",
+  "version": "1.0.0",
+  "description": "Surved UI",
+  "private": true,
+  "scripts": {
+    "start": "PORT=3101 node scripts/start.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js --env=jsdom",
+    "lint-js": "./node_modules/.bin/eslint ./*.js ./src/ --ext .js,.jsx --fix",
+    "docker-build": "./docker-build.sh surved/survey-ui $npm_package_version",
+    "release-patch": "npm version patch -m 'chore(*) patch version'",
+    "release-minor": "npm version minor -m 'chore(*) minor version'",
+    "release-major": "npm version major -m 'chore(*) major version'",
+    "version": "git fetch --tags",
+    "postversion": "git push origin master && git push --tags"
+  },
+  "dependencies": {
+    "antd": "3.8.0",
+    "prop-types": "15.6.2",
+    "react": "16.4.2",
+    "react-dom": "16.4.2",
+    "react-redux": "5.0.7",
+    "react-router": "4.3.1",
+    "react-router-dom": "4.3.1",
+    "redux": "4.0.0",
+    "redux-logger": "3.0.6",
+    "redux-saga": "^0.16.0",
+    "redux-thunk": "2.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "16.4.8",
+    "@types/react-dom": "16.0.7",
+    "@types/react-redux": "6.0.6",
+    "@types/react-router-dom": "4.3.0",
+    "jest": "23.4.2",
+    "ts-loader": "4.4.2",
+    "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.9.2",
+    "typescript": "3.0.1",
+    "webpack": "4.16.5"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
+    "setupFiles": [
+      "<rootDir>/config/polyfills.js"
+    ],
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.{js,jsx}",
+      "<rootDir>/src/**/?(*.)(spec|test).{js,jsx}"
+    ],
+    "testEnvironment": "node",
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
+    "moduleNameMapper": {
+      "^react-native$": "react-native-web"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx",
+      "node"
+    ]
+  }
+}

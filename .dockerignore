@@ -1,0 +1,10 @@
+.git*
+.idea*
+Dockerfile*
+build*
+bitbucket*
+node_modules*
+.editorconfig
+docker*
+README.md
+src/_app*

@@ -1,0 +1,11 @@
+version: '3.5'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3101:3101"
+  api:
+    image: surved/survey-api:1.0.0

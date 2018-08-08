@@ -1,0 +1,16 @@
+node_modules
+bower_components
+dev
+dist
+.sass-cache
+.tmp
+project.sublime-workspace
+.idea
+galen/reports
+npm-debug.log
+*.log
+*.sublime-project
+*.lnk
+*.lock
+*.bak
+build/*
