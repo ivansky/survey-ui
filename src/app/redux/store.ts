@@ -34,8 +34,8 @@ export default function configureStore(state = initialState) {
     });
   }
 
-  // @todo add redux-saga
-  // store.runSaga = sagaMiddleware.run;
+  // @ts-ignore
+  store.runSaga = sagaMiddleware.run;
   // @ts-ignore
   store.close = () => store.dispatch(END);
 

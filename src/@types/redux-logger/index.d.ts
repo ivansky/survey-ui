@@ -1,6 +1,5 @@
-import { Middleware } from 'redux';
-
 declare module 'redux-logger' {
-  type createLogger = Middleware;
+  import { Middleware } from 'redux';
+  function createLogger(): Middleware;
   export = createLogger;
 }
